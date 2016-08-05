@@ -87,6 +87,43 @@
 
 
 
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-06-05T05:55:41.000Z"><a href="/2016/06/05/openssl生成RSA密钥对/">2016-06-05</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/06/05/openssl生成RSA密钥对/">openssl生成RSA密钥对</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="生成RSA密钥对"><a href="#生成RSA密钥对" class="headerlink" title="生成RSA密钥对"></a>生成RSA密钥对</h2><h3 id="生成RSA私钥文件"><a href="#生成RSA私钥文件" class="headerlink" title="生成RSA私钥文件"></a>生成RSA私钥文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl genrsa -out private_rsa.pem  1024</span><br></pre></td></tr></table></figure>
+<h3 id="生成RSA公钥文件"><a href="#生成RSA公钥文件" class="headerlink" title="生成RSA公钥文件"></a>生成RSA公钥文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl rsa -in private_rsa.pem -pubout -out public_rsa.pem</span><br></pre></td></tr></table></figure>
+<p>此时文件为BASE64编码，执行以下命令，以明文形式输出密钥的各个参数值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl rsa -in private_rsa.pem -text -out private.txt</span><br></pre></td></tr></table></figure>
+<p>然后就可以在private.txt文件中查看RSA密钥中各个参数的值。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
 
 <nav id="pagination">
   
@@ -96,7 +133,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
